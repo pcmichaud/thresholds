@@ -1,12 +1,12 @@
-import numpy as np 
+import numpy as np
 
 def ini_normal(N,mu,sigma):
-    X = np.exp(np.log(mu) + sigma*np.random.normal(size=N) - 0.5*sigma**2)
+    X = np.exp(np.log(mu) + sigma*np.random.RandomState().normal(size=N) - 0.5*sigma**2)
     return X
 
 def rnd_normal(X,mu, rho,sigma):
     N = X.shape[0]
-    u = np.random.normal(size=N)
+    u = np.random.RandomState().normal(size=N)
     Xp = np.exp(np.log(mu)*(1-rho) + rho*np.log(X) + sigma * u)
     return Xp
 
