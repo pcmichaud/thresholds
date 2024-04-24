@@ -171,8 +171,9 @@ class monte_carlo:
                 X = np.delete(X,idx,axis=1)
                 Z = np.delete(Z,idx,axis=1)
                 beta = np.linalg.inv(Z.T @  X) @ (Z.T  @ y)
-                betas = beta[0:2]
-        return betas
+                #print(beta[0:2,0].T)
+
+        return beta[0:2,0].T
 
 
     def run(self):
